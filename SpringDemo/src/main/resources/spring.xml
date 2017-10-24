@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans default-init-method="myInit" default-destroy-method="myDestroy">
+
+<bean id = "parenttriangle" class = "packageOne.Triangle" abstract = "true">
+	<property name = "pointA" ref = "pointA" />
+</bean>
+
+<bean id = "triangle" class = "packageOne.Triangle" name="triangle-name" parent="parenttriangle">
+	<property name="pointB" ref = "pointB" />
+	<property name="pointC" ref = "pointC" />
+	
+<!-- 
+	
+	  <property name="pointB">
+		<bean class = "packageOne.Point">
+		<property name="x" value="-20" />
+		<property name="y" value="20" />
+		</bean>
+	</property>
+	
+	<property name="pointC">
+		<bean class = "packageOne.Point">
+		<property name="x" value="20" />
+		<property name="y" value="0" />
+		</bean>
+	</property>
+	
+    <constructor-arg index = "0" value = "Equilateral" />
+	<constructor-arg index = "1" value = "20" />  -->
+	
+</bean>
+
+<bean id = "square" class = "packageOne.Square" name = "square-name">
+	
+	<property name="points">
+	<list>
+		<ref bean = "pointA" />
+		<ref bean = "pointB" />
+		<ref bean = "pointC" />
+		<ref bean = "pointD" />
+	</list>
+	</property>
+
+</bean>
+
+<bean id = "circle" class = "packageOne.Circle" name = "circle-name">
+	<property name="center" ref="pointA" />
+</bean>
+
+<bean id="pointA" class = "packageOne.Point">
+	<property name="x" value="${pointA.pointX}" />
+	<property name="y" value="${pointA.pointY}" />
+</bean>
+
+<bean id="pointB" class = "packageOne.Point">
+	<property name="x" value="${pointB.pointX}" />
+	<property name="y" value="${pointB.pointY}" />
+</bean>
+
+<bean id="pointC" class = "packageOne.Point">
+	<property name="x" value="${pointC.pointX}" />
+	<property name="y" value="${pointC.pointY}" />
+</bean> 
+
+<bean id="pointD" class = "packageOne.Point">
+	<property name="x" value="${pointD.pointX}" />
+	<property name="y" value="${pointD.pointY}" />
+</bean> 
+
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="locations" value="pointsconfig.properties" />
+</bean>
+
+<alias name="triangle" alias="triangle-alias"/>
+
+</beans>
