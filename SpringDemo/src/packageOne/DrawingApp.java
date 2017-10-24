@@ -9,6 +9,8 @@ public class DrawingApp {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//BeanFactory factory = new ClassPathXmlApplicationContext("spring.xml");
+		
+		//Testing GitHub changes
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 		context.registerShutdownHook();
 		Shape triangleShape = (Shape) context.getBean("triangle-alias");
