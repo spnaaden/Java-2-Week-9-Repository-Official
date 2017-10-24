@@ -21,6 +21,9 @@ public class DrawingApp {
 		
 		Shape circleShape = (Shape) context.getBean("circle-name");
 		circleShape.draw();
+		
+		Shape pentagonShape = (Shape) context.getBean("pentagon-name");
+		pentagonShape.draw();
 	}
 
 }

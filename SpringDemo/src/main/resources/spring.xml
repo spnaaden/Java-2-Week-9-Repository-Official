@@ -49,6 +49,14 @@
 	<property name="center" ref="pointA" />
 </bean>
 
+<bean id = "pentagon" class = "packageOne.Circle" name = "pentagon-name">
+	<property name="pointA" ref="pointA" />
+	<property name="pointB" ref="pointB" />
+	<property name="pointC" ref="pointC" />
+	<property name="pointD" ref="pointD" />
+	<property name="pointE" ref="pointE" />
+</bean>
+
 <bean id="pointA" class = "packageOne.Point">
 	<property name="x" value="${pointA.pointX}" />
 	<property name="y" value="${pointA.pointY}" />
@@ -67,6 +75,11 @@
 <bean id="pointD" class = "packageOne.Point">
 	<property name="x" value="${pointD.pointX}" />
 	<property name="y" value="${pointD.pointY}" />
+</bean> 
+
+<bean id="pointE" class = "packageOne.Point">
+	<property name="x" value="${pointE.pointX}" />
+	<property name="y" value="${pointE.pointY}" />
 </bean> 
 
 <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
