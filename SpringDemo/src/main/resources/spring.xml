@@ -49,7 +49,7 @@
 	<property name="center" ref="pointA" />
 </bean>
 
-<bean id = "pentagon" class = "packageOne.Circle" name = "pentagon-name">
+<bean id = "pentagon" class = "packageOne.Pentagon" name = "pentagon-NAME">
 	<property name="pointA" ref="pointA" />
 	<property name="pointB" ref="pointB" />
 	<property name="pointC" ref="pointC" />
